@@ -1,6 +1,6 @@
 import {generateRandomPrice} from './data.js'
 
-
+let prevPrice=null
 function updateStock(){
     const stockData=generateRandomPrice()
     updatePage(stockData)
@@ -8,18 +8,33 @@ function updateStock(){
 updateStock()
 setInterval(updateStock,5000);
 
-let prevPrice=null
+
 
 function updatePage(stockData){
-    const Pricename=document.getElementById("company-name")
-    const symbol=document.getElementById("symbol")
-    const priceVal=document.getElementById("price-val")
-    const priceIcon=document.getElementById("price-sym")
-    const timePrice=document.getElementById("time")
+    const stockDisplayName=document.getElementById("company-name")
+    const stockDisplaySymbol=document.getElementById("symbol")
+    const stockDisplayPrice=document.getElementById("price-val")
+    const stockDisplayPriceIcon=document.getElementById("price-sym")
+    const stockDisplayTime=document.getElementById("time")
 
     const {name,sym,price,time}=stockData
-    Pricename.innerText=name;
-    symbol.innerText=symbol
-    priceVal.innerText=price
-    timePrice.innerText=time
+    stockDisplayName.innerText = name
+    stockDisplaySymbol.innerText = sym
+    stockDisplayPrice.innerText = price
+    stockDisplayTime.innerText = time
+    let icon
+    if(prevPrice===null){
+        icon='➡'
+    }
+    else if(prevPrice>price){
+        icon='⬇'
+    }
+    else if(prevPrice<price){
+        icon='⬆'
+    }
+    else{
+        icon='➡'
+    }
+    prevPrice=price
+    stockDisplayPriceIcon.innerText=icon
 }
