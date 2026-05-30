@@ -21,7 +21,7 @@ function updatePage(stockData){
     stockDisplayName.innerText = name
     stockDisplaySymbol.innerText = sym
     stockDisplayPrice.innerText = price
-    stockDisplayTime.innerText = time
+    stockDisplayTime.innerText=time
     let icon=document.getElementById("price-icon")
 
     if(prevPrice===null){

@@ -1,0 +1,32 @@
+body{
+
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#price-icon{
+    height: 10px;
+    width: 10px;
+}
+.main-div{
+    width: 350px;
+    min-width: 200px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    gap:10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+#price-val,
+#time{
+    font-family: monospace;
+}
